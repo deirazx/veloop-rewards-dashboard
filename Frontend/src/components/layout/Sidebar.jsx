@@ -72,9 +72,8 @@ const Sidebar = ({ currentTab, setCurrentTab, isOpen, setIsOpen }) => {
 
       {/* Main Sidebar Container */}
       <aside
-        className={`fixed top-0 bottom-0 left-0 z-50 w-72 transition-all duration-300 ease-in-out lg:translate-x-0 ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        } flex flex-col glass-panel border-r border-white/80 shadow-[0_4px_25px_rgba(0,0,0,0.03)]`}
+        className={`fixed top-0 bottom-0 left-0 z-50 w-72 transition-all duration-300 ease-in-out lg:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'
+          } flex flex-col glass-panel border-r border-white/80 shadow-[0_4px_25px_rgba(0,0,0,0.03)]`}
       >
         {/* Brand Logo & Header */}
         <div className="flex items-center justify-between px-6 py-6 border-b border-slate-100/80">
@@ -125,19 +124,17 @@ const Sidebar = ({ currentTab, setCurrentTab, isOpen, setIsOpen }) => {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`w-full flex items-center justify-between px-3.5 py-3 rounded-2xl text-sm font-medium transition-all duration-200 group relative ${
-                  isActive
+                className={`w-full flex items-center justify-between px-3.5 py-3 rounded-2xl text-sm font-medium transition-all duration-200 group relative ${isActive
                     ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg shadow-purple-500/25 font-semibold'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-white/80 hover:shadow-sm'
-                }`}
+                  }`}
               >
                 <div className="flex items-center gap-3.5">
                   <div
-                    className={`p-2 rounded-xl transition-colors ${
-                      isActive
+                    className={`p-2 rounded-xl transition-colors ${isActive
                         ? 'bg-white/20 text-white'
                         : 'bg-slate-100/80 text-slate-500 group-hover:bg-purple-50 group-hover:text-purple-600'
-                    }`}
+                      }`}
                   >
                     <Icon className="w-4 h-4" />
                   </div>
@@ -147,11 +144,10 @@ const Sidebar = ({ currentTab, setCurrentTab, isOpen, setIsOpen }) => {
                 <div className="flex items-center gap-2">
                   {item.badge && (
                     <span
-                      className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
-                        isActive
+                      className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${isActive
                           ? 'bg-white/20 text-white border-white/30'
                           : item.badgeColor
-                      }`}
+                        }`}
                     >
                       {item.badge}
                     </span>
@@ -206,12 +202,12 @@ const Sidebar = ({ currentTab, setCurrentTab, isOpen, setIsOpen }) => {
               </div>
               <span className="text-[11px] font-bold text-purple-600">82%</span>
             </div>
-            
+
             {/* Tier progress bar */}
             <div className="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden mb-2">
               <div className="bg-gradient-to-r from-amber-400 via-purple-500 to-indigo-600 h-1.5 rounded-full w-[82%]" />
             </div>
-            
+
             <p className="text-[10px] text-slate-400 flex items-center justify-between">
               <span>Next: Diamond VIP</span>
               <span className="font-semibold text-slate-600">1,800 VEs to go</span>

@@ -7,8 +7,14 @@ import ProfileView from './components/views/ProfileView';
 import LevelUpView from './components/views/LevelUpView';
 import NotFoundView from './components/views/NotFoundView';
 
+const getInitialTab = () => {
+  const path = window.location.pathname.replace(/^\//, '') || 'dashboard';
+  const validTabs = ['dashboard', 'wallet', 'levelup', 'referrals', 'profile', '404'];
+  return validTabs.includes(path) ? path : '404';
+};
+
 function App() {
-  const [currentTab, setCurrentTab] = useState('dashboard');
+  const [currentTab, setCurrentTab] = useState(getInitialTab);
   const [balance, setBalance] = useState(24850);
 
   const currentUser = {
@@ -17,6 +23,44 @@ function App() {
     tier: 'Gold VIP Member',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&h=160&q=80',
   };
+
+  // Sync state with browser URL path (handling popstate for back/forward buttons)
+  React.useEffect(() => {
+    const handleLocationChange = () => {
+      const path = window.location.pathname.replace(/^\//, '') || 'dashboard';
+      const validTabs = ['dashboard', 'wallet', 'levelup', 'referrals', 'profile', '404'];
+      
+      if (validTabs.includes(path)) {
+        setCurrentTab(path);
+      } else {
+        setCurrentTab('404');
+      }
+    };
+
+    window.addEventListener('popstate', handleLocationChange);
+    return () => window.removeEventListener('popstate', handleLocationChange);
+  }, []);
+
+  // Update URL path when currentTab state changes internally
+  React.useEffect(() => {
+    const currentPath = window.location.pathname.replace(/^\//, '') || 'dashboard';
+    const validTabs = ['dashboard', 'wallet', 'levelup', 'referrals', 'profile', '404'];
+    const isCurrentPathValid = validTabs.includes(currentPath);
+
+    // If we are showing 404 and the current URL path is already an invalid random URL,
+    // preserve the typed invalid URL in the address bar instead of rewriting it.
+    if (currentTab === '404' && !isCurrentPathValid) {
+      return;
+    }
+
+    // Default '/' matches 'dashboard' internally
+    const targetPath = currentTab === 'dashboard' ? '' : currentTab;
+    const resolvedPath = currentPath === 'dashboard' ? '' : currentPath;
+
+    if (targetPath !== resolvedPath) {
+      window.history.pushState(null, '', `/${targetPath}`);
+    }
+  }, [currentTab]);
 
   const handleVeGain = (veAmount) => {
     setBalance((prev) => prev + veAmount);
