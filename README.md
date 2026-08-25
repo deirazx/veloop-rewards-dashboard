@@ -1,94 +1,85 @@
-# 🚀 Veloop Rewards Platform
+# 🚀 VELOOP Rewards – Upcoming Features Redesign (Task 10)
 
-A premium, state-of-the-art Web Application built with **React.js, Vite, and Tailwind CSS**. Designed for the Veloop Rewards ecosystem, featuring a modern fintech-inspired wallet interface, a gamified level progression journey, responsive navigation layouts, and custom interactive components.
+A high-performance, interactive **Upcoming Features Section & Rewards Dashboard** built with **React.js (Vite)** and **Tailwind CSS**. Designed specifically for the **VELOP Rewards** ecosystem following the official Task 10 specification: a premium dark fintech interface (`#161827`), rich interactive upcoming product cards, feature-specific artwork, and real-time state synchronization.
 
 ---
 
-## 🔗 Project Links & Info
+## 🔗 Live Demo & Repository
 
-- 🌐 **Live URL Preview:** [https://veloops-rewards.netlify.app/](https://veloops-rewards.netlify.app/)
+- 🌐 **Live Demo URL:** [https://veloops-rewards.netlify.app/](https://veloops-rewards.netlify.app/)
 - 💻 **GitHub Repository:** [https://github.com/deirazx/veloop-rewards-dashboard](https://github.com/deirazx/veloop-rewards-dashboard)
-- 📝 **License:** MIT
-- 🛠️ **Author:** deirazx / Veloop Developers
+- 👨‍💻 **Author:** deirazx / VELOOP Frontend Team
+- 📜 **License:** MIT
 
 ---
 
 ## 📖 Table of Contents
-1. [Key Features Overview](#-key-features-overview)
-2. [Upcoming Features (7-Card Suite)](#-upcoming-features-7-card-suite)
+1. [Project Overview & Task 10 Objectives](#-project-overview--task-10-objectives)
+2. [Upcoming Features Suite (The 7 Cards)](#-upcoming-features-suite-the-7-cards)
 3. [Design & Styling Approach](#-design--styling-approach)
-4. [Responsive Behavior](#-responsive-behavior)
-5. [Animation & Micro-Interaction Details](#-animation--micro-interaction-details)
+4. [Illustration & Animation Details](#-illustration--animation-details)
+5. [Responsive Behavior](#-responsive-behavior)
 6. [Folder & Directory Structure](#-folder--directory-structure)
 7. [Installation & Setup Guide](#-installation--setup-guide)
+8. [Screenshots](#-screenshots)
 
 ---
 
-## ✨ Key Features Overview
+## 🎯 Project Overview & Task 10 Objectives
 
-### 1. App Layout Shell & Core Header
-- **Dynamic Navigation:** Left Sidebar with instant view routing between Dashboard, Wallet & Vault, Level Up, and Referrals.
-- **Glassmorphic Header:** Integrated with live VEs balance chip, a 5-day streak indicator, notifications popover, and an interactive Profile Dropdown menu.
-- **Streak Chest Collect:** A daily claim button giving users an instant +50 VEs booster with an animated feedback state.
+For **Task 10 (Upcoming Features Section Redesign)**, the objective is to build a modern, excitement-generating Upcoming Features experience on the VELOOP Rewards dashboard that communicates:
+$$\text{Coming Soon} \longrightarrow \text{Excitement} \longrightarrow \text{Curiosity} \longrightarrow \text{Trust} \longrightarrow \text{Future Reward Opportunities}$$
 
-### 2. Fintech Wallet & Payout Hub
-- **Estimated Valuation:** Real-time conversion displaying combined VEs + SVEs in INR.
-- **Reward Conversion Protocol:** A visual explanation of the 1:1 auto-conversion logic from Vesting SVEs to Liquid VEs with instant simulate-conversion actions.
-- **Dynamic Redeem Options:** Visual payout cards for **UPI Direct Transfer**, **Amazon Pay Gift Card**, and **Google Play Recharge Code**.
-- **Checkout Modal:** Denomination input selectors, validation forms (UPI ID, Email), and deduction simulations.
-
-### 3. Gamification & Level Milestones
-- **Rank Progress:** XP progress meter showing current tier (Level 4 Platinum Vanguard) and previewing next milestone (Level 5 Diamond Master).
-- **Roadmap Timeline:** Horizontal timeline displaying journey roadmap tiers from Beginner to Legend with stage rewards.
-- **Quest Activity Panel:** Interactive quest cards for Daily Challenges, Watch & Earn videos (with a 5s countdown timer), and a Lucky Mystery Wheel spin simulation.
-
-### 4. Standalone 404 Error Page
-- **Isolated Layout:** Hidden sidebar and navigation container to maximize immersion.
-- **Easter Egg Claim:** Clickable reward box granting +25 VEs, communicating with global header state instantly.
+Instead of treating upcoming features as inactive or disabled buttons, each feature is crafted as a **real, upcoming product preview** with:
+- Feature-specific custom illustrations and badges (`Coming Soon`, `Launching Soon`, `Under Development`, `Stay Tuned`).
+- Explicit reward potential indicators (e.g., `Up to 25,000 VEs Shared Pool`, `₹50,000 INR Jackpot`).
+- Interactive **Sneak Peek Modals** with early-access email notifications.
 
 ---
 
-## 🔮 Upcoming Features (7-Card Suite)
+## 🔮 Upcoming Features Suite (The 7 Cards)
 
-Designed with the **"Coming Soon"** lock overlay and visual badges, these features outline the roadmap progression of the gamified hub:
+Every one of the **7 required features** is developed with dedicated artwork, reward indicators, release timelines, and sneak peek previews:
 
-1. ⚔️ **Team Battle Arena:** Join guilds or participate in community-wide co-op matches to share massive collective VEs pools.
-2. 🎟️ **Weekly Lucky Draw:** Stake a tiny fraction of earned VEs to participate in high-tier booster or merchandise giveaways.
-3. 🔐 **Veloops Crypto Exchange:** Directly off-ramp VEs to Solana (SOL) or Ethereum (ETH) with automated smart contract settlement.
-4. 🎭 **NFT Avatar Customization Shop:** Customize profile card frames, hover glows, and avatar tiers using earned rewards.
-5. 📺 **Sponsor Spotlight Multiplier:** Watch premium sponsored streams to unlock temporary 2.0x boost multipliers.
-6. 🧠 **Trivia Quest Showdown:** Face other online users in fast-paced Web3 and gaming trivia contests for direct cashbacks.
-7. 🔮 **Predict & Earn Tournament Guild:** Predict esport and tournament matchups using a zero-risk staking protocol.
+| # | Feature Name | Category | Status Badge | Reward Opportunity | Key Description |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **01** | **Team Battle** | Competitions & Squads | `Coming Soon` (Q4 2026) | `Up to 25,000 VEs Shared Pool` | Form 4-member squads, climb weekly tier divisions, and split massive pooled rewards. |
+| **02** | **Lucky Draw** | Draws & Sweepstakes | `Launching Soon` (Nov 2026) | `₹50,000 INR Jackpot + Badges` | Stake daily tickets into weekly provably-fair lottery draws with guaranteed consolation yields. |
+| **03** | **Milestone Rewards** | Progression & Loyalty | `Under Development` (Dec 2026) | `Permanent Multiplier Boosts` | Surpass cumulative lifetime earnings thresholds to permanently waive withdrawal fees down to 0%. |
+| **04** | **Collect Cards** | Digital Collectibles | `Stay Tuned` (Q1 2027) | `Full Set Bonus (+10,000 VEs)` | Collect thematic card sets through quests and trade duplicates to forge completed albums for instant vouchers. |
+| **05** | **Surprise Rewards** | Real-Time Drops | `Coming Soon` (Oct 2026) | `Random Flash VEs Airdrops` | Spontaneous mystery parcels that appear live on the dashboard for active streak holders. |
+| **06** | **Mystery Rewards** | Enigma Crates | `Under Development` (Q4 2026) | `Secret Vault Multipliers` | Decipher seasonal community ciphers and riddles to unlock high-tier 3.0x multiplier perks. |
+| **07** | **Referral Milestone** | Affiliate Network | `Launching Soon` (Nov 2026) | `Up to 25% Lifetime Rev Share` | Expand active invited creator networks to unlock monthly stipends and ambassador tech hardware. |
 
 ---
 
 ## 🎨 Design & Styling Approach
 
-The interface uses a **Premium Modern Light Mode with Glassmorphism** instead of typical dark neon themes, emphasizing legibility and high-contrast boundaries:
+The UI strictly complies with the **Task 10 Color and Surface Guidelines**:
+- **Application Background:** Strictly maintained at `#161827` (Dark Navy/Slate).
+- **Surface Elevation:** Deep navy and midnight slate surfaces (`#1c2035`, `#181c2f`, `#141624`) with subtle borders (`border-slate-700/60`, `border-purple-500/20`) providing clear separation.
+- **Refined Palette:** Soft blue, gold (`#F59E0B`, `#FDE047`), muted purple (`#A855F7`), emerald, and silver text tones.
+- **Zero Cheap Clutter:** Avoids washed-out light glassmorphism, aggressive neon clashing, rainbow gradients, and arcade gaming tropes to preserve a **trustworthy, premium fintech identity**.
+- **Typography:** Google Fonts pairing of **Outfit** (headings) and **Plus Jakarta Sans** (body).
 
-- **Colors:** Harmonious pearl white panels, frosted overlays (`backdrop-blur-xl bg-white/80`), deep purple accents (`text-purple-950`, `bg-purple-600`), and gold/amber highlights (`text-amber-800`, `bg-amber-400`).
-- **Typography:** Built using the clean, premium geometric sans-serif fonts **Plus Jakarta Sans** and **Outfit** imported from Google Fonts.
-- **SEO Elements:** Formatted markup with semantic HTML5 elements (`<aside>`, `<header>`, `<main>`, `<footer>`), unique IDs for interactive inputs, and meta tags in the document head.
+---
+
+## 🎬 Illustration & Animation Details
+
+- **Feature Artwork:** Each card renders a custom SVG vector visual (e.g., 3D Crossed Shields for Team Battle, Golden Ticket Wheel for Lucky Draw, Holographic Card Stack for Collect Cards, Enigma Cube for Mystery Rewards).
+- **Micro-Interactions:**
+  - Dynamic card hover elevation (`hover:-translate-y-1.5`) with ambient glow transitions.
+  - Floating coin and particle rotations on interactive cards.
+  - Rotating wheel animations and responsive countdown timer simulations.
+  - Toast confirmation and interactive email waitlist subscription logic.
 
 ---
 
 ## 📱 Responsive Behavior
 
-Designed with Tailwind grid layout and responsive classes to ensure standard layout flow across all devices:
-
-- **Desktop (>=1024px):** Dual column view layout with a fixed, persistent sidebar navigation and broad metrics panel.
-- **Mobile/Tablet (<1024px):** Collapsed sidebar behind a responsive sliding drawer. Header handles compact view states, showing icon-only action rows.
-- **Inputs & Dropdowns:** Dropdowns utilize click-outside handlers (`useEffect`) to automatically clean up overlay overlays on smaller screen sizes.
-
----
-
-## 🎬 Animation & Micro-Interaction Details
-
-To deliver an engaging, rewarding feel, the UI implements subtle CSS/Tailwind animations:
-- **Glow Pulse Indicator:** Active indicators (like the live streak fire icon) use custom pulsing effects.
-- **Rank Ascension modal:** Unlocking Level 5 launches a scaling zoom transition overlay with particles.
-- **Spin Wheel Motion:** The Lucky Wheel triggers a randomized rotation timer with a loader wheel indicator.
-- **Transitions:** Buttons and navigation rows use hover translation adjustments (`hover:scale-[1.02] active:scale-[0.98] transition-all`).
+- **Desktop ($\ge$ 1024px):** Comprehensive dual-column layout with fixed left sidebar navigation and 4-column card grids.
+- **Tablet / Mobile (< 1024px):** Auto-collapsing sidebar behind a responsive slide-out drawer, 1-to-2 column adaptive card grids, and touch-optimized touch targets.
+- **Isolated 404 Experience:** When navigating to an invalid URL, the layout removes the dashboard sidebar for a distraction-free, full-screen standalone error recovery experience.
 
 ---
 
@@ -97,73 +88,87 @@ To deliver an engaging, rewarding feel, the UI implements subtle CSS/Tailwind an
 ```text
 veloop-rewards-dashboard/
 ├── .gitignore
-├── README.md                 <-- Main Project Documentation (Root)
+├── README.md                          <-- Root Documentation
 └── Frontend/
-    ├── package.json          <-- Library & Scripts Configuration
+    ├── package.json
     ├── vite.config.js
-    ├── index.html            <-- Document Entrypoint & Fonts Configuration
+    ├── index.html                     <-- #161827 Dark Body & Fonts Setup
     ├── public/
-    │   └── _redirects        <-- Netlify SPA Redirect Rules
+    │   └── _redirects                 <-- Netlify SPA Production Rules
     └── src/
-        ├── App.jsx           <-- Routing Integrator & Global Balance State
+        ├── App.jsx                    <-- Routing Integrator & Live Global State
         ├── main.jsx
-        ├── index.css         <-- Global CSS, Glassmorphic Rules & Custom Scrollbar
+        ├── index.css                  <-- #161827 Design Tokens & Keyframe Animations
         ├── assets/
-        │   └── logo.png      <-- Brand Logo Image
+        │   └── logo.png               <-- Brand Logo Asset
         └── components/
+            ├── upcoming/              <-- TASK 10 UPCOMING FEATURES SUITE
+            │   ├── UpcomingFeatures.jsx      <-- Section Header, Category Filters & 7-Card Grid
+            │   ├── UpcomingCard.jsx          <-- Custom SVG Artwork, Badges & CTA Triggers
+            │   └── FeatureSneakPeekModal.jsx <-- Sneak Peek Modal & Early Access Waitlist
             ├── layout/
-            │   ├── AppLayout.jsx  <-- Main Frame (Isolates 404 Layout)
-            │   ├── Header.jsx     <-- Search, Balance collections, Notifs & Profile dropdown
-            │   └── Sidebar.jsx    <-- Desktop/Mobile Sidebar Navigation
+            │   ├── AppLayout.jsx             <-- Layout Frame (404 Isolation Support)
+            │   ├── Header.jsx                <-- Live Balance Chip, Search, Notifications, Profile
+            │   └── Sidebar.jsx               <-- Responsive Dark Sidebar & VIP Multiplier Card
             ├── wallet/
-            │   ├── PrimaryBalanceCard.jsx
-            │   ├── RewardComposition.jsx
-            │   ├── QuickActions.jsx
-            │   ├── RedeemSection.jsx
-            │   ├── RedeemModal.jsx
-            │   └── WalletHistoryTable.jsx
+            │   ├── PrimaryBalanceCard.jsx    <-- INR Valuation & Liquid VEs vs SVEs
+            │   ├── RewardComposition.jsx     <-- 1:1 Auto-Conversion Protocol Explainer
+            │   ├── QuickActions.jsx          <-- Instant Withdraw, History, Earn More
+            │   ├── RedeemSection.jsx         <-- UPI, Amazon Pay & Google Play Vouchers
+            │   ├── RedeemModal.jsx           <-- Interactive Checkout Modal
+            │   └── WalletHistoryTable.jsx    <-- Searchable Ledger History
             ├── gamification/
-            │   ├── CurrentLevelCard.jsx
-            │   ├── LevelJourneyTimeline.jsx
-            │   └── GamificationTasks.jsx
+            │   ├── CurrentLevelCard.jsx      <-- Level 4 XP Progress & Rank Perks
+            │   ├── LevelJourneyTimeline.jsx  <-- Horizontal Beginner-to-Legend Timeline
+            │   └── GamificationTasks.jsx     <-- Daily Quests, Video Spotlight, Lucky Spin
             └── views/
-                ├── DashboardView.jsx
-                ├── WalletView.jsx
-                ├── LevelUpView.jsx
-                ├── ReferralsView.jsx
-                ├── ProfileView.jsx
-                └── NotFoundView.jsx
+                ├── DashboardView.jsx         <-- /home Dashboard with UpcomingFeatures Centerpiece
+                ├── WalletView.jsx            <-- Payouts & Balance Hub
+                ├── LevelUpView.jsx           <-- Gamification & XP Level-Up View
+                ├── ReferralsView.jsx         <-- Affiliate Network & 1-Click Sharing
+                ├── ProfileView.jsx           <-- 2FA Security & Notification Preferences
+                └── NotFoundView.jsx          <-- Standalone 404 View with Easter Egg
 ```
 
 ---
 
 ## 🛠️ Installation & Setup Guide
 
-Ensure you have **Node.js (v18 or higher)** installed on your machine.
+### Prerequisites
+- Node.js (v18.0.0 or higher)
+- npm (v9.0.0 or higher)
 
-### Step 1: Clone the Repository
+### 1. Clone the repository:
 ```bash
 git clone https://github.com/deirazx/veloop-rewards-dashboard.git
 cd veloop-rewards-dashboard
 ```
 
-### Step 2: Install Dependencies
-Navigate to the frontend folder and run installation:
+### 2. Navigate to Frontend & Install Dependencies:
 ```bash
 cd Frontend
 npm install
 ```
 
-### Step 3: Start Local Development Server
-Launch the Vite local preview server:
+### 3. Launch Development Server:
 ```bash
 npm run dev
 ```
-Open [http://localhost:5173/](http://localhost:5173/) in your web browser to test the local workspace.
+Open your browser at **`http://localhost:5173/`** to explore the live dashboard.
 
-### Step 4: Build for Production
-To test production compilation:
+### 4. Build for Production:
 ```bash
 npm run build
 ```
-The optimized compiled build outputs to the `Frontend/dist` folder.
+Optimized assets will compile into `Frontend/dist/`.
+
+---
+
+## 📸 Screenshots
+
+| Feature View | Description |
+| :--- | :--- |
+| **Upcoming Features (7 Cards)** | The centerpiece Task 10 section featuring Team Battle, Lucky Draw, Milestone Rewards, Collect Cards, Surprise Rewards, Mystery Rewards, and Referral Milestone. |
+| **Fintech Wallet & Payouts** | Real-time INR portfolio valuation, 1:1 SVE conversion protocol, and instant UPI / Amazon Pay / Google Play redemption modals. |
+| **Gamification & Level Milestones** | Interactive Level 4 XP progress bar, milestone timeline journey, and daily quests with instant rewards. |
+| **Standalone 404 Page** | Full-screen error recovery experience with a hidden secret stash Easter egg (+25 VEs). |

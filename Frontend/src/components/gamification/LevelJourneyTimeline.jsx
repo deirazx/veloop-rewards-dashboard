@@ -81,20 +81,20 @@ const LevelJourneyTimeline = ({ currentLevel = 4 }) => {
   const activeStageDetails = stages.find((s) => s.level === selectedStage) || stages[3];
 
   return (
-    <div className="glass-panel rounded-3xl p-6 sm:p-7 border border-white/80 shadow-lg space-y-6">
+    <div className="rounded-3xl p-6 sm:p-7 bg-[#1c2035] border border-slate-700/60 shadow-xl space-y-6 text-white">
       
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
         <div>
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-xl bg-purple-100 text-purple-700">
+            <div className="p-2 rounded-xl bg-purple-500/20 text-purple-300">
               <Award className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="font-heading font-extrabold text-lg sm:text-xl text-slate-900">
+              <h2 className="font-heading font-extrabold text-lg sm:text-xl text-white">
                 Level Journey Roadmap
               </h2>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-400">
                 Progress from Beginner to Legend to unlock permanent multipliers & rewards.
               </p>
             </div>
@@ -102,7 +102,7 @@ const LevelJourneyTimeline = ({ currentLevel = 4 }) => {
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="text-xs font-bold px-3 py-1 rounded-full bg-purple-50 text-purple-700 border border-purple-200">
+          <span className="text-xs font-bold px-3 py-1 rounded-full bg-purple-950/80 text-purple-300 border border-purple-800/80">
             Current: Level {currentLevel} ({stages[currentLevel - 1]?.name})
           </span>
         </div>
@@ -114,7 +114,7 @@ const LevelJourneyTimeline = ({ currentLevel = 4 }) => {
           
           {/* Connecting Line Track */}
           <div className="relative flex items-center justify-between">
-            <div className="absolute top-1/2 left-0 right-0 h-1.5 bg-slate-200 -translate-y-1/2 rounded-full -z-0" />
+            <div className="absolute top-1/2 left-0 right-0 h-1.5 bg-slate-800 -translate-y-1/2 rounded-full -z-0" />
             <div
               className="absolute top-1/2 left-0 h-1.5 bg-gradient-to-r from-emerald-400 via-purple-600 to-indigo-600 -translate-y-1/2 rounded-full -z-0 transition-all duration-700"
               style={{ width: `${((currentLevel - 1) / (stages.length - 1)) * 100}%` }}
@@ -139,10 +139,10 @@ const LevelJourneyTimeline = ({ currentLevel = 4 }) => {
                   <div
                     className={`w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-sm transition-all duration-300 shadow-md ${
                       isCurrent
-                        ? 'bg-gradient-to-tr from-purple-600 to-indigo-600 text-white ring-4 ring-purple-300 shadow-purple-500/30 animate-subtle-pulse'
+                        ? 'bg-gradient-to-tr from-purple-600 to-indigo-600 text-white ring-4 ring-purple-500/40 shadow-purple-500/40 animate-subtle-pulse'
                         : isUnlocked
                         ? 'bg-emerald-500 text-white shadow-emerald-500/20'
-                        : 'bg-white text-slate-400 border-2 border-slate-300'
+                        : 'bg-[#141624] text-slate-500 border-2 border-slate-700'
                     }`}
                   >
                     {isUnlocked ? (
@@ -150,7 +150,7 @@ const LevelJourneyTimeline = ({ currentLevel = 4 }) => {
                     ) : isCurrent ? (
                       <Crown className="w-5 h-5 text-amber-300 fill-amber-300" />
                     ) : (
-                      <Lock className="w-4 h-4 text-slate-400" />
+                      <Lock className="w-4 h-4 text-slate-500" />
                     )}
                   </div>
 
@@ -159,18 +159,18 @@ const LevelJourneyTimeline = ({ currentLevel = 4 }) => {
                     <span
                       className={`text-xs font-bold block ${
                         isCurrent
-                          ? 'text-purple-700 font-extrabold'
+                          ? 'text-purple-300 font-extrabold'
                           : isUnlocked
-                          ? 'text-slate-800'
-                          : 'text-slate-400'
+                          ? 'text-slate-200'
+                          : 'text-slate-500'
                       }`}
                     >
                       Lvl {stage.level}
                     </span>
-                    <span className="text-[11px] font-semibold text-slate-600 block whitespace-nowrap">
+                    <span className="text-[11px] font-semibold text-slate-300 block whitespace-nowrap">
                       {stage.name}
                     </span>
-                    <span className="text-[10px] text-slate-400 block font-mono">
+                    <span className="text-[10px] text-slate-500 block font-mono">
                       {stage.xpRequired}
                     </span>
                   </div>
@@ -190,28 +190,28 @@ const LevelJourneyTimeline = ({ currentLevel = 4 }) => {
       </div>
 
       {/* Selected Stage Detail Card */}
-      <div className="p-5 rounded-2xl bg-gradient-to-r from-purple-50/70 via-indigo-50/40 to-slate-50/70 border border-purple-200/70 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="p-5 rounded-2xl bg-[#141624] border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="space-y-1.5">
           <div className="flex items-center gap-2">
             <span className="text-xs font-bold px-2.5 py-0.5 rounded-md bg-purple-600 text-white">
               Level {activeStageDetails.level}: {activeStageDetails.name}
             </span>
-            <span className="text-xs font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded">
+            <span className="text-xs font-bold text-amber-300 bg-amber-950/80 px-2 py-0.5 rounded border border-amber-500/30">
               {activeStageDetails.multiplier} Boost
             </span>
-            <span className="text-xs text-slate-500 font-mono">
+            <span className="text-xs text-slate-400 font-mono">
               Requires {activeStageDetails.xpRequired}
             </span>
           </div>
 
-          <p className="text-xs text-slate-700 font-semibold">
-            Milestone Reward: <span className="text-purple-700 font-bold">{activeStageDetails.reward}</span>
+          <p className="text-xs text-slate-300 font-semibold">
+            Milestone Reward: <span className="text-purple-400 font-bold">{activeStageDetails.reward}</span>
           </p>
 
           <div className="flex flex-wrap gap-2 pt-1">
             {activeStageDetails.perks.map((p, idx) => (
-              <span key={idx} className="text-[11px] font-medium text-slate-600 bg-white/80 px-2.5 py-1 rounded-lg border border-slate-200 flex items-center gap-1">
-                <CheckCircle2 className="w-3 h-3 text-emerald-500" />
+              <span key={idx} className="text-[11px] font-medium text-slate-300 bg-[#1e2238] px-2.5 py-1 rounded-lg border border-slate-700 flex items-center gap-1">
+                <CheckCircle2 className="w-3 h-3 text-emerald-400" />
                 {p}
               </span>
             ))}
@@ -220,12 +220,12 @@ const LevelJourneyTimeline = ({ currentLevel = 4 }) => {
 
         <div className="shrink-0">
           {activeStageDetails.level <= currentLevel ? (
-            <span className="px-4 py-2 rounded-xl bg-emerald-100 text-emerald-700 font-bold text-xs flex items-center gap-1.5">
+            <span className="px-4 py-2 rounded-xl bg-emerald-950/80 text-emerald-300 border border-emerald-500/40 font-bold text-xs flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4" />
               Stage Unlocked
             </span>
           ) : (
-            <span className="px-4 py-2 rounded-xl bg-slate-200/80 text-slate-600 font-bold text-xs flex items-center gap-1.5">
+            <span className="px-4 py-2 rounded-xl bg-[#1a1c2f] text-slate-400 border border-slate-700 font-bold text-xs flex items-center gap-1.5">
               <Lock className="w-4 h-4" />
               Unlock at {activeStageDetails.xpRequired}
             </span>

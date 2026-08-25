@@ -19,11 +19,10 @@ const RedeemSection = ({ onSelectMethod, veBalance }) => {
       title: 'UPI Direct Transfer',
       tagline: 'Instant Cash to Any Bank / VPA',
       badge: 'Most Popular',
-      badgeColor: 'bg-emerald-100 text-emerald-700 border-emerald-200',
+      badgeColor: 'bg-emerald-950/60 text-emerald-300 border-emerald-500/40',
       icon: QrCode,
-      gradient: 'from-purple-600/10 via-white to-emerald-500/10',
-      border: 'hover:border-emerald-400',
-      iconColor: 'bg-emerald-500 text-white shadow-emerald-500/25',
+      border: 'hover:border-emerald-500/50',
+      iconColor: 'bg-emerald-500 text-slate-950 shadow-emerald-500/25',
       minAmount: 'Min. ₹100 (100 VEs)',
       fee: '0% Platform Fee',
       speed: 'Instant (under 60 sec)',
@@ -34,11 +33,10 @@ const RedeemSection = ({ onSelectMethod, veBalance }) => {
       title: 'Amazon Pay Gift Card',
       tagline: 'e-Gift Voucher for Shopping & Bills',
       badge: '+2% Extra Bonus',
-      badgeColor: 'bg-amber-100 text-amber-800 border-amber-200',
+      badgeColor: 'bg-amber-950/60 text-amber-300 border-amber-500/40',
       icon: CreditCard,
-      gradient: 'from-amber-500/10 via-white to-purple-500/10',
-      border: 'hover:border-amber-400',
-      iconColor: 'bg-amber-500 text-white shadow-amber-500/25',
+      border: 'hover:border-amber-500/50',
+      iconColor: 'bg-amber-500 text-slate-950 shadow-amber-500/25',
       minAmount: 'Min. ₹250 (250 VEs)',
       fee: 'Instant Email Voucher',
       speed: 'Instant Code Delivery',
@@ -49,11 +47,10 @@ const RedeemSection = ({ onSelectMethod, veBalance }) => {
       title: 'Google Play Recharge',
       tagline: 'Direct Codes for Apps, Games & Subs',
       badge: 'Instant SMS',
-      badgeColor: 'bg-indigo-100 text-indigo-700 border-indigo-200',
+      badgeColor: 'bg-indigo-950/60 text-indigo-300 border-indigo-500/40',
       icon: Sparkles,
-      gradient: 'from-indigo-600/10 via-white to-blue-500/10',
-      border: 'hover:border-indigo-400',
-      iconColor: 'bg-indigo-600 text-white shadow-indigo-500/25',
+      border: 'hover:border-indigo-500/50',
+      iconColor: 'bg-indigo-500 text-white shadow-indigo-500/25',
       minAmount: 'Min. ₹100 (100 VEs)',
       fee: 'Official Partner Codes',
       speed: 'Instant Code via SMS',
@@ -62,20 +59,20 @@ const RedeemSection = ({ onSelectMethod, veBalance }) => {
   ];
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 text-white">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <div>
-          <h2 className="font-heading font-extrabold text-lg sm:text-xl text-slate-900 flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-amber-500 fill-amber-400" />
+          <h2 className="font-heading font-extrabold text-lg sm:text-xl text-white flex items-center gap-2">
+            <Sparkles className="w-5 h-5 text-amber-400 fill-amber-400" />
             Redeem Your Rewards
           </h2>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-slate-400">
             Convert your liquid VEs to INR cash, gift cards, or app store credit.
           </p>
         </div>
 
-        <div className="flex items-center gap-2 text-xs text-slate-500 bg-white/70 px-3 py-1.5 rounded-full border border-slate-200/80 shadow-xs">
-          <ShieldCheck className="w-4 h-4 text-purple-600" />
+        <div className="flex items-center gap-2 text-xs text-slate-400 bg-[#141624] px-3 py-1.5 rounded-full border border-slate-800 shadow-xs">
+          <ShieldCheck className="w-4 h-4 text-purple-400" />
           <span>Guaranteed Instant Payouts</span>
         </div>
       </div>
@@ -86,7 +83,7 @@ const RedeemSection = ({ onSelectMethod, veBalance }) => {
           return (
             <div
               key={card.id}
-              className={`p-6 rounded-3xl glass-panel glass-card-hover border border-white/80 shadow-lg ${card.border} flex flex-col justify-between relative overflow-hidden group`}
+              className={`p-6 rounded-3xl bg-[#1c2035] border border-slate-700/60 shadow-xl ${card.border} flex flex-col justify-between relative overflow-hidden group hover:-translate-y-1 transition-all duration-300`}
             >
               {/* Top Row */}
               <div>
@@ -99,22 +96,22 @@ const RedeemSection = ({ onSelectMethod, veBalance }) => {
                   </span>
                 </div>
 
-                <h3 className="font-heading font-bold text-base text-slate-900">
+                <h3 className="font-heading font-bold text-base text-white">
                   {card.title}
                 </h3>
-                <p className="text-xs text-slate-500 mt-0.5 mb-4">
+                <p className="text-xs text-slate-400 mt-0.5 mb-4">
                   {card.tagline}
                 </p>
 
                 {/* Key Benefits List */}
-                <div className="space-y-2 py-3 border-y border-slate-100 text-xs">
-                  <div className="flex items-center justify-between text-slate-600">
-                    <span className="text-slate-400">Min. Payout</span>
-                    <span className="font-semibold text-slate-800">{card.minAmount}</span>
+                <div className="space-y-2 py-3 border-y border-slate-800 text-xs">
+                  <div className="flex items-center justify-between text-slate-300">
+                    <span className="text-slate-500">Min. Payout</span>
+                    <span className="font-semibold text-slate-200">{card.minAmount}</span>
                   </div>
-                  <div className="flex items-center justify-between text-slate-600">
-                    <span className="text-slate-400">Processing Time</span>
-                    <span className="font-bold text-emerald-600 flex items-center gap-1">
+                  <div className="flex items-center justify-between text-slate-300">
+                    <span className="text-slate-500">Processing Time</span>
+                    <span className="font-bold text-emerald-400 flex items-center gap-1">
                       <Clock className="w-3 h-3" />
                       {card.speed}
                     </span>
@@ -126,7 +123,7 @@ const RedeemSection = ({ onSelectMethod, veBalance }) => {
                   {card.supported.map((tag, i) => (
                     <span
                       key={i}
-                      className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-100/80 text-slate-600 border border-slate-200/50"
+                      className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-[#141624] text-slate-400 border border-slate-800"
                     >
                       {tag}
                     </span>
@@ -137,7 +134,7 @@ const RedeemSection = ({ onSelectMethod, veBalance }) => {
               {/* Action Button */}
               <button
                 onClick={() => onSelectMethod(card.id)}
-                className="w-full py-3 px-4 rounded-2xl bg-slate-900 hover:bg-purple-600 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md transition-all duration-200 group-hover:shadow-purple-500/20 active:scale-98 cursor-pointer"
+                className="w-full py-3 px-4 rounded-2xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md shadow-purple-500/25 transition-all duration-200 active:scale-98 cursor-pointer"
               >
                 <span>Redeem via {card.title.split(' ')[0]}</span>
                 <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

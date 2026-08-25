@@ -29,7 +29,7 @@ const WalletHistoryTable = ({ transactions = [] }) => {
       date: 'Today, 10:45 AM',
       status: 'Settled',
       icon: QrCode,
-      iconBg: 'bg-rose-100 text-rose-600',
+      iconBg: 'bg-rose-500/20 text-rose-400',
     },
     {
       id: 'TXN-881920',
@@ -41,7 +41,7 @@ const WalletHistoryTable = ({ transactions = [] }) => {
       date: 'Today, 06:00 AM',
       status: 'Converted',
       icon: RefreshCw,
-      iconBg: 'bg-purple-100 text-purple-600',
+      iconBg: 'bg-purple-500/20 text-purple-300',
     },
     {
       id: 'TXN-880412',
@@ -53,7 +53,7 @@ const WalletHistoryTable = ({ transactions = [] }) => {
       date: 'Yesterday, 08:20 PM',
       status: 'Credited',
       icon: Sparkles,
-      iconBg: 'bg-emerald-100 text-emerald-600',
+      iconBg: 'bg-emerald-500/20 text-emerald-400',
     },
     {
       id: 'TXN-879801',
@@ -65,7 +65,7 @@ const WalletHistoryTable = ({ transactions = [] }) => {
       date: 'Aug 21, 2026',
       status: 'Delivered',
       icon: CreditCard,
-      iconBg: 'bg-amber-100 text-amber-600',
+      iconBg: 'bg-amber-500/20 text-amber-400',
     },
     {
       id: 'TXN-878290',
@@ -77,7 +77,7 @@ const WalletHistoryTable = ({ transactions = [] }) => {
       date: 'Aug 20, 2026',
       status: 'Credited',
       icon: Sparkles,
-      iconBg: 'bg-emerald-100 text-emerald-600',
+      iconBg: 'bg-emerald-500/20 text-emerald-400',
     },
   ];
 
@@ -93,28 +93,28 @@ const WalletHistoryTable = ({ transactions = [] }) => {
   });
 
   return (
-    <div id="wallet-history-section" className="glass-panel rounded-3xl p-6 sm:p-7 border border-white/80 shadow-lg space-y-5">
+    <div id="wallet-history-section" className="rounded-3xl p-6 sm:p-7 bg-[#1c2035] border border-slate-700/60 shadow-xl space-y-5 text-white">
       
       {/* Table Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-slate-100">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-slate-800">
         <div>
-          <h2 className="font-heading font-extrabold text-lg sm:text-xl text-slate-900">
+          <h2 className="font-heading font-extrabold text-lg sm:text-xl text-white">
             Wallet Ledger & Activity
           </h2>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-slate-400">
             Complete transaction record of earnings, conversions, and redemptions.
           </p>
         </div>
 
         {/* Search */}
         <div className="relative w-full sm:w-64">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by ID or description..."
-            className="w-full pl-9 pr-3 py-1.5 bg-slate-50 border border-slate-200/80 rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500"
+            className="w-full pl-9 pr-3 py-1.5 bg-[#131522] border border-slate-700 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 shadow-inner"
           />
         </div>
       </div>
@@ -130,10 +130,10 @@ const WalletHistoryTable = ({ transactions = [] }) => {
           <button
             key={tab.id}
             onClick={() => setActiveFilter(tab.id)}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
               activeFilter === tab.id
-                ? 'bg-purple-600 text-white shadow-sm shadow-purple-500/20'
-                : 'bg-slate-100/80 hover:bg-slate-200 text-slate-600'
+                ? 'bg-purple-600 text-white shadow-sm shadow-purple-500/25'
+                : 'bg-[#141624] hover:bg-[#1f2338] text-slate-400 hover:text-white border border-slate-800'
             }`}
           >
             {tab.label}
@@ -142,9 +142,9 @@ const WalletHistoryTable = ({ transactions = [] }) => {
       </div>
 
       {/* Transactions List */}
-      <div className="divide-y divide-slate-100/80 overflow-x-auto">
+      <div className="divide-y divide-slate-800 overflow-x-auto">
         {filteredTxns.length === 0 ? (
-          <div className="text-center py-10 text-slate-400 text-xs">
+          <div className="text-center py-10 text-slate-500 text-xs">
             No transactions found matching your filter criteria.
           </div>
         ) : (
@@ -155,23 +155,23 @@ const WalletHistoryTable = ({ transactions = [] }) => {
             return (
               <div
                 key={tx.id || idx}
-                className="py-3.5 px-2 flex items-center justify-between gap-4 hover:bg-white/60 rounded-2xl transition-colors"
+                className="py-3.5 px-2 flex items-center justify-between gap-4 hover:bg-[#232742]/50 rounded-2xl transition-colors"
               >
                 <div className="flex items-center gap-3.5 min-w-0">
-                  <div className={`p-2.5 rounded-2xl shrink-0 ${tx.iconBg || 'bg-slate-100 text-slate-600'}`}>
+                  <div className={`p-2.5 rounded-2xl shrink-0 ${tx.iconBg || 'bg-slate-800 text-slate-400'}`}>
                     <Icon className="w-4 h-4" />
                   </div>
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <h4 className="text-xs sm:text-sm font-bold text-slate-900 truncate">
+                      <h4 className="text-xs sm:text-sm font-bold text-white truncate">
                         {tx.title}
                       </h4>
-                      <span className="text-[10px] font-mono text-slate-400 hidden md:inline-block">
+                      <span className="text-[10px] font-mono text-slate-500 hidden md:inline-block">
                         {tx.id}
                       </span>
                     </div>
-                    <p className="text-[11px] text-slate-500 mt-0.5">
-                      {tx.date} • <span className="font-semibold text-slate-600">{tx.type}</span>
+                    <p className="text-[11px] text-slate-400 mt-0.5">
+                      {tx.date} • <span className="font-semibold text-slate-300">{tx.type}</span>
                     </p>
                   </div>
                 </div>
@@ -179,16 +179,16 @@ const WalletHistoryTable = ({ transactions = [] }) => {
                 <div className="text-right shrink-0">
                   <div
                     className={`text-xs sm:text-sm font-extrabold font-heading ${
-                      isNegative ? 'text-rose-600' : 'text-emerald-600'
+                      isNegative ? 'text-rose-400' : 'text-emerald-400'
                     }`}
                   >
                     {isNegative ? '' : '+'}
                     {tx.amountVE.toLocaleString()} VEs
                   </div>
-                  <div className="flex items-center justify-end gap-1.5 text-[10px] text-slate-500 mt-0.5">
+                  <div className="flex items-center justify-end gap-1.5 text-[10px] text-slate-400 mt-0.5">
                     <span>≈ ₹{Math.abs(tx.amountINR).toLocaleString('en-IN')}</span>
-                    <span className="w-1 h-1 rounded-full bg-slate-300" />
-                    <span className="text-emerald-600 font-semibold flex items-center gap-0.5">
+                    <span className="w-1 h-1 rounded-full bg-slate-700" />
+                    <span className="text-emerald-400 font-semibold flex items-center gap-0.5">
                       <CheckCircle2 className="w-2.5 h-2.5" />
                       {tx.status}
                     </span>

@@ -27,7 +27,7 @@ const GamificationTasks = ({ onCompleteTask, onNavigate }) => {
       xpReward: 350,
       veReward: 150,
       badge: 'Daily Reset in 4h',
-      badgeColor: 'bg-amber-100 text-amber-800 border-amber-200',
+      badgeColor: 'bg-amber-950/60 text-amber-300 border-amber-500/40',
       icon: Flame,
       iconBg: 'bg-amber-500 text-slate-950 shadow-amber-500/25',
       completed: false,
@@ -42,7 +42,7 @@ const GamificationTasks = ({ onCompleteTask, onNavigate }) => {
       xpReward: 200,
       veReward: 80,
       badge: '5 Available Today',
-      badgeColor: 'bg-purple-100 text-purple-700 border-purple-200',
+      badgeColor: 'bg-purple-950/60 text-purple-300 border-purple-500/40',
       icon: Play,
       iconBg: 'bg-purple-600 text-white shadow-purple-500/25',
       completed: false,
@@ -57,7 +57,7 @@ const GamificationTasks = ({ onCompleteTask, onNavigate }) => {
       xpReward: 1000,
       veReward: 500,
       badge: 'Big XP Bonus',
-      badgeColor: 'bg-emerald-100 text-emerald-700 border-emerald-200',
+      badgeColor: 'bg-emerald-950/60 text-emerald-300 border-emerald-500/40',
       icon: Users,
       iconBg: 'bg-emerald-600 text-white shadow-emerald-500/25',
       completed: false,
@@ -72,7 +72,7 @@ const GamificationTasks = ({ onCompleteTask, onNavigate }) => {
       xpReward: 150,
       veReward: 250,
       badge: 'Free Daily Spin',
-      badgeColor: 'bg-indigo-100 text-indigo-700 border-indigo-200',
+      badgeColor: 'bg-indigo-950/60 text-indigo-300 border-indigo-500/40',
       icon: Sparkles,
       iconBg: 'bg-indigo-600 text-white shadow-indigo-500/25',
       completed: false,
@@ -88,7 +88,6 @@ const GamificationTasks = ({ onCompleteTask, onNavigate }) => {
     if (task.completed) return;
 
     if (task.id === 'watch-earn') {
-      // Simulate 5-second quick watch modal
       setActiveWatchTask(true);
       setWatchTimer(5);
       const interval = setInterval(() => {
@@ -123,21 +122,21 @@ const GamificationTasks = ({ onCompleteTask, onNavigate }) => {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 text-white">
       
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <div>
-          <h2 className="font-heading font-extrabold text-lg sm:text-xl text-slate-900 flex items-center gap-2">
-            <Zap className="w-5 h-5 text-amber-500 fill-amber-400" />
+          <h2 className="font-heading font-extrabold text-lg sm:text-xl text-white flex items-center gap-2">
+            <Zap className="w-5 h-5 text-amber-400 fill-amber-400" />
             Quick Earn Tasks & Daily Challenges
           </h2>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-slate-400">
             Complete daily objectives to rapidly accumulate XP and unlock Level 5.
           </p>
         </div>
 
-        <span className="text-xs font-bold text-slate-600 bg-white/80 px-3 py-1 rounded-full border border-slate-200/80 shadow-xs w-fit">
+        <span className="text-xs font-bold text-slate-300 bg-[#141624] px-3 py-1 rounded-full border border-slate-700 shadow-xs w-fit">
           Refreshes at midnight UTC
         </span>
       </div>
@@ -152,8 +151,8 @@ const GamificationTasks = ({ onCompleteTask, onNavigate }) => {
           return (
             <div
               key={task.id}
-              className={`p-6 rounded-3xl glass-panel glass-card-hover border border-white/80 shadow-md flex flex-col justify-between transition-all relative overflow-hidden group ${
-                isDone ? 'bg-emerald-50/30 border-emerald-200' : ''
+              className={`p-6 rounded-3xl bg-[#1c2035] border border-slate-700/60 shadow-xl flex flex-col justify-between transition-all relative overflow-hidden group hover:-translate-y-1 ${
+                isDone ? 'border-emerald-500/40 bg-[#16222b]' : ''
               }`}
             >
               <div>
@@ -167,32 +166,32 @@ const GamificationTasks = ({ onCompleteTask, onNavigate }) => {
                     <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full border ${task.badgeColor}`}>
                       {task.badge}
                     </span>
-                    <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 font-mono">
+                    <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-purple-950/80 text-purple-300 border border-purple-800/80 font-mono">
                       +{task.xpReward} XP
                     </span>
-                    <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-mono">
+                    <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-amber-950/80 text-amber-300 border border-amber-500/30 font-mono">
                       +{task.veReward} VEs
                     </span>
                   </div>
                 </div>
 
                 {/* Title & Desc */}
-                <h3 className="font-heading font-bold text-base text-slate-900 group-hover:text-purple-700 transition-colors">
+                <h3 className="font-heading font-bold text-base text-white group-hover:text-purple-300 transition-colors">
                   {task.title}
                 </h3>
-                <p className="text-xs text-slate-500 mt-1 mb-4 leading-relaxed">
+                <p className="text-xs text-slate-400 mt-1 mb-4 leading-relaxed">
                   {task.desc}
                 </p>
 
                 {/* Progress Bar */}
                 <div className="space-y-1.5 mb-5">
-                  <div className="flex justify-between text-[11px] font-semibold text-slate-600">
+                  <div className="flex justify-between text-[11px] font-semibold text-slate-400">
                     <span>Progress</span>
                     <span>
                       {task.progress} / {task.total} Completed
                     </span>
                   </div>
-                  <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden border border-slate-200/50 shadow-inner">
+                  <div className="w-full bg-[#131522] rounded-full h-2 overflow-hidden border border-slate-800 shadow-inner">
                     <div
                       style={{ width: `${progressPercent}%` }}
                       className={`h-full rounded-full transition-all duration-500 ${
@@ -209,15 +208,15 @@ const GamificationTasks = ({ onCompleteTask, onNavigate }) => {
               <button
                 onClick={() => handleAction(task)}
                 disabled={isDone}
-                className={`w-full py-3 px-4 rounded-2xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md active:scale-98 ${
+                className={`w-full py-3 px-4 rounded-2xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md active:scale-98 cursor-pointer ${
                   isDone
-                    ? 'bg-emerald-100 text-emerald-700 border border-emerald-200 cursor-default shadow-none'
-                    : 'bg-slate-900 hover:bg-purple-600 text-white shadow-slate-900/10 hover:shadow-purple-500/25 cursor-pointer'
+                    ? 'bg-emerald-950/60 text-emerald-300 border border-emerald-500/40 cursor-default shadow-none'
+                    : 'bg-purple-600 hover:bg-purple-700 text-white shadow-purple-500/25'
                 }`}
               >
                 {isDone ? (
                   <>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                     <span>Completed (+{task.xpReward} XP Earned)</span>
                   </>
                 ) : (
@@ -234,29 +233,29 @@ const GamificationTasks = ({ onCompleteTask, onNavigate }) => {
 
       {/* Simulated Video Player Modal */}
       {activeWatchTask && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in">
-          <div className="w-full max-w-md p-6 rounded-3xl glass-panel bg-white/95 border border-white shadow-2xl text-center space-y-4">
-            <div className="w-16 h-16 rounded-2xl bg-purple-100 text-purple-600 mx-auto flex items-center justify-center shadow-lg shadow-purple-500/20">
-              <Play className="w-8 h-8 fill-purple-600" />
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in">
+          <div className="w-full max-w-md p-6 rounded-3xl bg-[#1c2035] border border-slate-700 shadow-2xl text-center space-y-4 text-white">
+            <div className="w-16 h-16 rounded-2xl bg-purple-500/20 text-purple-400 mx-auto flex items-center justify-center shadow-lg">
+              <Play className="w-8 h-8 fill-purple-400" />
             </div>
 
             <div>
-              <h3 className="font-heading font-extrabold text-lg text-slate-900">
+              <h3 className="font-heading font-extrabold text-lg text-white">
                 Playing Sponsor Spotlight
               </h3>
-              <p className="text-xs text-slate-500 mt-1">
+              <p className="text-xs text-slate-400 mt-1">
                 Stay on screen for reward credit...
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center gap-3">
-              <Loader2 className="w-5 h-5 text-purple-600 animate-spin" />
-              <span className="text-sm font-mono font-bold text-slate-900">
+            <div className="p-4 rounded-2xl bg-[#131522] border border-slate-800 flex items-center justify-center gap-3">
+              <Loader2 className="w-5 h-5 text-purple-400 animate-spin" />
+              <span className="text-sm font-mono font-bold text-white">
                 00:0{watchTimer} remaining
               </span>
             </div>
 
-            <div className="text-xs text-purple-700 font-bold">
+            <div className="text-xs text-purple-300 font-bold">
               Reward upon completion: +200 XP & +80 VEs
             </div>
           </div>
@@ -265,7 +264,7 @@ const GamificationTasks = ({ onCompleteTask, onNavigate }) => {
 
       {/* Toast feedback for Copy Link */}
       {copiedLink && (
-        <div className="fixed bottom-6 right-6 z-50 bg-slate-900 text-white text-xs font-bold px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-2 animate-in slide-in-from-bottom-5">
+        <div className="fixed bottom-6 right-6 z-50 bg-[#1c2035] border border-purple-500/50 text-white text-xs font-bold px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-2 animate-in slide-in-from-bottom-5">
           <CheckCircle2 className="w-4 h-4 text-emerald-400" />
           <span>Referral Link Copied! Task Completed: +1,000 XP & +500 VEs credited!</span>
         </div>
