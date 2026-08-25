@@ -6,7 +6,7 @@ import RedeemSection from '../wallet/RedeemSection';
 import WalletHistoryTable from '../wallet/WalletHistoryTable';
 import RedeemModal from '../wallet/RedeemModal';
 
-const WalletView = ({ onNavigate }) => {
+const WalletView = ({ onNavigate, onVeDeduct, onVeGain }) => {
   // State for user balances
   const [veBalance, setVeBalance] = useState(18450);
   const [sveBalance, setSveBalance] = useState(6400);
@@ -46,6 +46,7 @@ const WalletView = ({ onNavigate }) => {
   // Successful Redemption handler from modal
   const handleSuccessRedeem = ({ method, amountINR, veDeducted, txId }) => {
     setVeBalance((prev) => Math.max(0, prev - veDeducted));
+    if (onVeDeduct) onVeDeduct(veDeducted);
 
     const methodNames = {
       upi: 'UPI Transfer to VPA',

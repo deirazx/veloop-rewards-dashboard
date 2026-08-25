@@ -17,13 +17,13 @@ import {
   Target
 } from 'lucide-react';
 
-const DashboardView = ({ onNavigate }) => {
+const DashboardView = ({ onNavigate, balance = 24850 }) => {
   const stats = [
     {
       title: 'Total Balance',
-      value: '24,850',
+      value: balance.toLocaleString(),
       unit: 'VEs',
-      usdValue: '$248.50 USD',
+      usdValue: `$${(balance * 0.01).toFixed(2)} USD`,
       change: '+14.2%',
       isPositive: true,
       icon: Coins,

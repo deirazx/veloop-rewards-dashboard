@@ -66,12 +66,27 @@ function App() {
     setBalance((prev) => prev + veAmount);
   };
 
+  const handleVeDeduct = (veAmount) => {
+    setBalance((prev) => Math.max(0, prev - veAmount));
+  };
+
   const renderContent = () => {
     switch (currentTab) {
       case 'dashboard':
-        return <DashboardView onNavigate={(tab) => setCurrentTab(tab)} />;
+        return (
+          <DashboardView
+            onNavigate={(tab) => setCurrentTab(tab)}
+            balance={balance}
+          />
+        );
       case 'wallet':
-        return <WalletView onNavigate={(tab) => setCurrentTab(tab)} />;
+        return (
+          <WalletView
+            onNavigate={(tab) => setCurrentTab(tab)}
+            onVeDeduct={handleVeDeduct}
+            onVeGain={handleVeGain}
+          />
+        );
       case 'levelup':
         return (
           <LevelUpView
@@ -80,9 +95,9 @@ function App() {
           />
         );
       case 'referrals':
-        return <ReferralsView />;
+        return <ReferralsView onNavigate={(tab) => setCurrentTab(tab)} />;
       case 'profile':
-        return <ProfileView user={currentUser} />;
+        return <ProfileView user={currentUser} onNavigate={(tab) => setCurrentTab(tab)} />;
       case '404':
         return (
           <NotFoundView
